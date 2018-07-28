@@ -1,14 +1,15 @@
 import {Memoizer} from './Memoizer'
-import {FantasyLineup} from './FantasyLineup'
-import {InvalidLineup} from './FantasyLineup'
-import {Player} from './Player'
+import {FantasyLineup} from '../lib/FantasyLineup'
+import {InvalidLineup} from '../lib/FantasyLineup'
+import {Player} from '../lib/Player'
+import {IsValidFunction} from './isValidFunction'
 
 interface LineupsIfTakeAndPass {
   lineupIfTake: FantasyLineup | InvalidLineup
   lineupIfPass: FantasyLineup | InvalidLineup
 }
 
-type IsValidFunction = (lineup: FantasyLineup) => boolean
+
 
 const isTypeOfInvalidLineup = (a: any) => Object.keys(InvalidLineup).some(l => l === a)
 
