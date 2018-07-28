@@ -8,9 +8,9 @@ interface LineupsIfTakeAndPass {
   lineupIfPass: FantasyLineup | InvalidLineup
 }
 
-const isTypeOfInvalidLineup = (a: any) => Object.keys(InvalidLineup).some(l => l === a)
-
 type IsValidFunction = (lineup: FantasyLineup) => boolean
+
+const isTypeOfInvalidLineup = (a: any) => Object.keys(InvalidLineup).some(l => l === a)
 
 export class SingleLineupOptimizer {
   private playerPool: Player[]

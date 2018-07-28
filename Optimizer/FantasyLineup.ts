@@ -1,5 +1,5 @@
-import {Player} from './Player'
-import {StatType} from './StatType'
+import {Player} from '../constants/Player'
+import {FantasyStat} from '../constants/Stats'
 
 export enum InvalidLineup {
   OVER_SALARY = 'OVER_SALARY',
@@ -22,8 +22,8 @@ export class FantasyLineup {
 
     this.roster = roster
 
-    this.salary =- this.total(StatType.salary)
-    this.projection = this.total(StatType.projection)
+    this.salary =- this.total(FantasyStat.salary)
+    this.projection = this.total(FantasyStat.projection)
 
     this.isComplete = roster.length === rosterSpots
 
@@ -35,7 +35,7 @@ export class FantasyLineup {
     }
   }
 
-  public total = (statType: StatType): number => {
+  public total = (statType: FantasyStat): number => {
     return this.roster.reduce((total: number, player: Player): number => total + player[statType], 0)
   }
 
